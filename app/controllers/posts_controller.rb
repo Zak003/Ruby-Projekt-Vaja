@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  #GET /posts/1
   # GET /posts/1 or /posts/1.json
   def show
   end
@@ -19,9 +20,11 @@ class PostsController < ApplicationController
   def edit
   end
 
+  # POST /posts
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
