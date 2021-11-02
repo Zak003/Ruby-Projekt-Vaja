@@ -16,10 +16,8 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
-        <td><%= post.user.email %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= post.user.name || 'Anonimen avtor' %></td> 
+        <%= display_index_post_links(post) %>
       </tr>
     <% end %>
   </tbody>
