@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   #before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create ] #ali ri ali spodnja vrstica
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :authorize_user!, except: [:index, :show]
+  before_action :authorize_user!, except: [:index, :show, :new]
+  #before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   # GET /posts or /posts.json
   def index
