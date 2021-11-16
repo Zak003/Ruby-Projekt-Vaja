@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  #before_action :authorize_user!, except: [:index, :show, :new] #ta je tapravi za heroku
+  #before_action :authorize_user!, except: [:index, :show, :new]
   before_action :authorize_user!, only: [ :edit, :update, :destroy ]
 
 
