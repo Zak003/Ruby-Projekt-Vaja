@@ -3,6 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  has_many :posts #on(uporabnik) ima mnogo postov, tukaj pa nebo post_id, ampak bo vedu kako iskat
+  acts_as_commontator
+  has_many :posts, dependent: :destroy #on(uporabnik) ima mnogo postov, tukaj pa nebo post_id, ampak bo vedu kako iskat. dependent: :destroy-> ko zbrišemo userja bo izbirsalo tudi use post-e
 end

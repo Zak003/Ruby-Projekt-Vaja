@@ -13,5 +13,7 @@ environment.plugins.append(
   })
 )
 
+environment.config.set('resolve.alias', {jquery: 'jquery/src/jquery'}); //#jquery ki smo ga napisali odzgoraj smo v tej vrstici povedali tocno pot do jquery
+
 
 module.exports = environment
