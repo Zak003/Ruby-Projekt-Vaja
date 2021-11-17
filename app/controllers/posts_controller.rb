@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.posted
   end
 
   #GET /posts/1
@@ -73,7 +73,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :scheduled_for)
     end
 
     def authorize_user!
