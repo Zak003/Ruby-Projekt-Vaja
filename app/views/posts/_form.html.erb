@@ -23,7 +23,14 @@
 
   <div class="field">
     <%= form.label :scheduled_for %>
-    <%= form.datetime_select :scheduled_for, requiered: true %>
+    <%= form.text_field :scheduled_for,
+      data: {
+        controller: "flatpickr",
+        flatpickr_date_format: "d.m.Y %H:%M",
+        flatpickr_enable_time: true,
+        flatpickr_time_24hr: true,
+        flatpickr_min_date: Time.zone.now
+      } %>
   </div>
 
   <div class="actions">
