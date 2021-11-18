@@ -4,4 +4,9 @@ class Post < ApplicationRecord
 
     validates :title, presence: true
     validates :body, presence: true
+
+    #naredimo novo funkcijo
+    def self.posted #ker damo self pomeni da dela na podlagi useh postov
+        where('scheduled_for < ? OR scheduled_for IS NULL', DateTime.now) #izpiše nam datume ki so manjši od današnjega(pretekli) oz. tiste ki sploh nimajo datuma
+    end
 end
