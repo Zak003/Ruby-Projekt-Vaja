@@ -30,7 +30,13 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise' #Avtentikacija uporabnika
 
+gem "aws-sdk-s3", require: false
+
 gem 'commontator' #Engine za komentarje
+
+gem 'jwt' #token za API
+
+gem 'simple_command' #izvrševanje avtentikacije za API
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
